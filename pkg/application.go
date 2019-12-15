@@ -15,12 +15,11 @@ type Application struct {
 	Routes        *router.Routes
 	HealthCheck   config.HealthCheck
 	bigIdClient   client.BigIDClient
-	compline      client.ComplineClient
 	mongeralAegon client.MongeralAegonClient
 }
 
-func NewApplication(routes *router.Routes, healthCheck config.HealthCheck, bigIdClient client.BigIDClient, compline client.ComplineClient, mongeralAegon client.MongeralAegonClient) Application {
-	return Application{Routes: routes, HealthCheck: healthCheck, bigIdClient: bigIdClient, compline: compline, mongeralAegon: mongeralAegon}
+func NewApplication(routes *router.Routes, healthCheck config.HealthCheck, bigIdClient client.BigIDClient, mongeralAegon client.MongeralAegonClient) Application {
+	return Application{Routes: routes, HealthCheck: healthCheck, bigIdClient: bigIdClient, mongeralAegon: mongeralAegon}
 }
 
 func (app Application) SetupHealthCheck() {

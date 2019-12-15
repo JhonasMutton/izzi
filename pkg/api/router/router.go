@@ -22,6 +22,7 @@ func (routes *Routes) MakeHandlers() *mux.Router {
 	r := mux.NewRouter().PathPrefix("/izzi/api/v1").Subrouter()
 	r.HandleFunc("/simulacao", routes.insuranceHandler.Simulation).Methods(http.MethodPost)
 	r.HandleFunc("/verificarRG", routes.validationHandler.VerifyRgData).Methods(http.MethodPost)
+	r.HandleFunc("/proposta", routes.insuranceHandler.Propose).Methods(http.MethodPost)
 	r.HandleFunc("/health", health.HandlerFunc).Methods(http.MethodGet)
 
 	return r

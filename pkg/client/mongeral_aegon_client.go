@@ -43,6 +43,21 @@ func (client MongeralAegonClient) Simulation(body []byte) (*http.Response, error
 	return result, nil
 }
 
+func (client MongeralAegonClient) Propose(body []byte) (*http.Response, error) {
+	result, err := client.CallMongeralAegon(body, "POST", "proposta/YZ?empresa="+client.cnpjPartner)
+	if err != nil {
+		infra.Logger.Error("Error to call Mongeral Aegon:", err.Error())
+		return nil, err
+	}
+
+	if 200 != result.StatusCode {
+		infra.Logger.Error("Call to Mongeral Aegon was unsuccessful")
+		return nil, errors.ErrInternalServer
+	}
+
+	return result, nil
+}
+
 func (client MongeralAegonClient) CallMongeralAegon(body []byte, method, path string) (*http.Response, error) {
 	callUrl := client.baseUrl.String() + path
 

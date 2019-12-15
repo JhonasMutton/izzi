@@ -34,3 +34,21 @@ func (i *InsuranceHandler) Simulation(w http.ResponseWriter, r *http.Request) {
 
 	render.Response(w, simulado, 200)
 }
+
+func (i *InsuranceHandler) Propose(w http.ResponseWriter, r *http.Request) {
+	var proposta models.PropostaModel
+
+	if err := json.NewDecoder(r.Body).Decode(&proposta); err != nil {
+		infra.Logger.Errorw("Parsing proposta json error", "error", err.Error())
+		render.ResponseError(w, err, http.StatusUnprocessableEntity)
+		return
+	}
+
+	idProposta, err := i.insuranceUseCase.Propose(proposta)
+	if err != nil{
+		infra.Logger.Errorw("Error to propose a insurance", "error", err.Error())
+		render.ResponseError(w, err, http.StatusInternalServerError)
+	}
+
+	render.Response(w, idProposta, 200)
+}

@@ -12,6 +12,7 @@ import (
 
 type IInsuranceUseCase interface {
 	Simulation(simulacoes models.SimulacoesModel) (*map[string]interface{}, error)
+	Propose(propostas models.PropostaModel) (*map[string]interface{}, error)
 }
 
 type InsuranceUseCase struct {
@@ -29,6 +30,33 @@ func (i InsuranceUseCase) Simulation(simulacoes models.SimulacoesModel) (*map[st
 
 
 	response, err := i.mongeralAegonClient.Simulation(reqBodyBytes.Bytes())
+	if err != nil{
+		infra.Logger.Errorw("Error to call Mongeral Aegon", "error", err.Error())
+		return nil, errors.WrapWithMessage(errors.ErrInternalServer, err.Error())
+	}
+
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil{
+		infra.Logger.Errorw("Error to read body returned of Mongeral Aegon", "error", err.Error())
+		return nil, errors.WrapWithMessage(errors.ErrInternalServer, err.Error())
+	}
+
+	var result map[string]interface{}
+	err = json.Unmarshal(body,&result)
+	return &result, nil
+}
+
+func (i InsuranceUseCase) Propose(propostas models.PropostaModel) (*map[string]interface{}, error) {
+	reqBodyBytes := new(bytes.Buffer)
+	err := json.NewEncoder(reqBodyBytes).Encode(propostas)
+
+	if err != nil{
+		infra.Logger.Errorw("Error to encode Proposta", "error", err.Error())
+		return nil, errors.WrapWithMessage(errors.ErrInternalServer, err.Error())
+	}
+
+
+	response, err := i.mongeralAegonClient.Propose(reqBodyBytes.Bytes())
 	if err != nil{
 		infra.Logger.Errorw("Error to call Mongeral Aegon", "error", err.Error())
 		return nil, errors.WrapWithMessage(errors.ErrInternalServer, err.Error())
