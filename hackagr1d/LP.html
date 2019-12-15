@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Izzi - do seu lado quando você mais precisa.</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <img src="./assets/imgs/banner.jpg" alt="Izzi, do seu lado quando você mais precisa" class="img-fluid">
+        </header>
+        <article>
+            <section class="carosel">
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        " nO BRASIL, TODOS OS DIAS 6 PESSOAS MORREM EM ACIDENTES DE TRABALHO "
+                        <br>
+                        <span>- FONTE</span>
+                    </div>
+
+                    <div class="mySlides fade">
+                        " nO BRASIL, TODOS OS DIAS 6 PESSOAS MORREM EM ACIDENTES DE TRABALHO "
+                        <br>
+                        <span>- FONTE</span>
+                    </div>
+
+                    <div class="mySlides fade">
+                        " nO BRASIL, TODOS OS DIAS 6 PESSOAS MORREM EM ACIDENTES DE TRABALHO "
+                        <br>
+                        <span>- FONTE</span>
+                    </div>
+
+
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </section>
+            <section class="vive">
+                <div class="row">
+                    <div class="coluna-texto">
+                        <h2 class="titulo">
+                            o autônomo <br> também <span>vive</span>
+                        </h2>
+                        <p>
+                            Com o grande crescimento dos trabalhadores MEI a preocupação com direitos básicos de saúde
+                            ficou ainda mais presente no
+                            mercado e sem os direitos trabalhistas qual seria a melhor alternativa para possíveis
+                            imprevistos médicos?
+                        </p>
+                    </div>
+                    <div class="coluna-imagem">
+                        <img class="img-fluid" src="./assets/imgs/banner1.png" alt="Homem brincando com bebe">
+                    </div>
+                </div>
+            </section>
+            <section class="vida-segura">
+                <div class="row">
+                    <div class="coluna-imagem">
+                        <img class="img-fluid" src="./assets/imgs/vida-segura.png" alt="">
+                    </div>
+                    <div class="coluna-texto">
+                        <h2 class="titulo">
+                            Vida Seguro
+                        </h2>
+                        <p>Perder uma semana de trabalho por causa de um afastamento pode causar sérios problemas
+                            financeiros, mas você sabia que
+                            existe um serviço que te apoia nesses momentos?</p>
+                    </div>
+                </div>
+            </section>
+            <section class="influencers">
+                <h2 class="titulo">Isso é <span>seguro de vida</span></h2>
+                <p>A opção mais em conta para garantir sua saúde vital e financeira.</p>
+                <img src="./assets/imgs/influencer.jpg" alt="exemplo de video">
+                <a href="#" target="_blank">Veja a opinião de vários influenciadores sobre a Izzi</a>
+            </section>
+            <section class="vantagens">
+                <div class="row">
+                    <div class="coluna-vantagens">
+                        <img src="./assets/imgs/check-mark.svg" alt="check mark">
+                        <h2 class="titulo">
+                            cabe no bolso
+                        </h2>
+                        <p>Com planos a partir de <br>20 reais</p>
+                    </div>
+                    <div class="coluna-vantagens">
+                        <img src="./assets/imgs/check-mark.svg" alt="check mark">
+                        <h2 class="titulo">
+                            é prático
+                        </h2>
+                        <p>Você contrata e controla do conforto da sua casa</p>
+                    </div>
+                    <div class="coluna-vantagens">
+                        <img src="./assets/imgs/check-mark.svg" alt="check mark">
+                        <h2 class="titulo">
+                            confiável
+                        </h2>
+                        <p>Anos de experiência proporcionando vida</p>
+                    </div>
+                    <div class="coluna-vantagens">
+                        <img src="./assets/imgs/check-mark.svg" alt="check mark">
+                        <h2 class="titulo">
+                            24 horas
+                        </h2>
+                        <p>Com você em todos os<br> momentos</p>
+                    </div>
+                </div>
+            </section>
+            <section class="depoimento">
+                <div class="container">
+                    <div class="row">
+                        <img src="./assets/imgs/depoimento.jpg" alt="Autor do depoimento">
+                        <div class="depo">
+                            " Graças ao seguro consegui manter as coisas funcionando mesmo ficando 3 meses afastado "
+                            <b>- Cliente X</b>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="simular">
+                <div class="row">
+                    <div class="coluna-imagem">
+                        <img class="img-fluid" src="./assets/imgs/mulher-no-foodtruck.jpg"
+                            alt="Autonoma no seu food truck">
+                    </div>
+                    <div class="coluna-texto">
+                        <img class="img-fluid" src="./assets/imgs/planos.jpg" alt="Planos a partir de 20 reais por mês">
+                        <button id="myBtn" class="btn modal-open">Simular o meu plano</button>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <a href="tel:+551900000000">19 0000-0000</a>
+                    <a href="" target="_blank"><img src="./assets/imgs/mongeral-aegon-logo-site.png"
+                            alt="Mongeral Aegon"></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div id="app">
+                <template v-if="HouveErrosDuranteProcessamento">
+                    <h2 class="titulo">
+                        <span>Preencha os Campos para receber o resultado</span>
+                    </h2>
+                    <div class="form">
+                        <div class="group">
+                            <label for="nome">Nome</label><input id="nome" type="text" v-model="simulações.nome">
+                        </div>
+                        <div class="group">
+                            <label for="cpf">Cpf</label><input id="cpf" type="text" v-model="simulações.c">
+                        </div>
+                        <div class="group">
+                            <label for="nasc">Data Nascimento</label><input id="nasc" type="text"
+                                v-model="simulações.dataNascimento">
+                        </div>
+                        <div class="group">
+                            <label for="renda">Renda</label><input id="renda" type="text" v-model="simulações.renda">
+                        </div>
+                        <div class="group">
+                            <label for="sexo">Sexo</label><input id="sexo" type="text" v-model="simulações.sexoId">
+                        </div>
+                        <div class="group">
+                            <label for="uf">UF</label><input id="uf" type="text" v-model="simulações.uf">
+                        </div>
+                        <button class="btn" @click="HouveErrosDuranteProcessamento = false">Mostrar Resultado</button>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="form">
+                        <p class="titulo"><span>Seu plano mensal:</span></p>
+                        <div class="plano">{{proposta.valor}}</div>
+                        <p class="titulo"><span>Com direito a:</span></p>
+                        <ul>
+                            <li v-for="item in proposta.items">- {{item.item}}</li>
+                        </ul>
+                        <a href="" class="btn">Quero contratar</a>
+                    </div>
+                </template>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        app = new Vue({
+            el: '#app',
+            data: {
+                simulações: {
+                    proponente: {
+                        nome: "",
+                        cpf: "",
+                        dataNascimento: "",
+                        renda: "",
+                        sexoId: "",
+                        uf: ""
+                    }
+                },
+                HouveErrosDuranteProcessamento: true,
+                proposta: {
+                    valor: "R$ 20,00",
+                    items: [
+                        {
+                            item: "Beneficio 1"
+                        },
+                        {
+                            item: "Beneficio 2"
+                        },
+                        {
+                            item: "Beneficio 3"
+                        }
+                    ]
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

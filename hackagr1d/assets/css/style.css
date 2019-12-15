@@ -1,0 +1,290 @@
+@font-face {
+  font-family: "Aoki";
+  src: url("../fonts/aokiRegular.woff") format("woff");
+}
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  color: #464646;
+  font-family: "PT Sans Narrow";
+  margin: 0;
+  background-color: #e9e9e9;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 0 auto 37px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  font-size: 45px;
+  font-family: "Aoki";
+  text-transform: uppercase;
+  text-align: center;
+  color: #292929;
+}
+.mySlides span {
+  font-size: 20px;
+  font-family: "PT Sans Narrow";
+  text-align: center;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #002bff;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2.5s;
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.titulo {
+  font-family: "Aoki";
+  font-weight: 500;
+  font-size: 45px;
+  text-transform: uppercase;
+}
+.titulo span {
+  color: #002bff;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.container {
+  max-width: 85%;
+  padding: 15px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .row {
+  margin: 0 -15px;
+}
+.coluna-texto,
+.coluna-imagem {
+  width: 50%;
+  padding: 0 15px;
+}
+.coluna-vantagens {
+  width: 25%;
+  padding: 0 15px;
+  text-align: center;
+}
+.carosel {
+  background-color: white;
+  padding: 100px 0;
+}
+.vive .coluna-texto {
+  padding-left: 175px;
+  font-size: 35px;
+}
+.vive .coluna-texto .titulo {
+  margin-bottom: 71px;
+}
+.vida-segura {
+  padding: 170px 0;
+  background-color: #002bff;
+  color: white;
+  font-size: 25px;
+}
+.vida-segura .titulo {
+  margin-top: 0;
+}
+.vida-segura .coluna-texto {
+  padding: 0 100px 0 140px;
+}
+.vida-segura .coluna-imagem {
+  margin-left: -55px;
+}
+.influencers {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 70px;
+}
+.influencers img {
+  max-width: 75%;
+  margin: 0 auto 30px;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+.vantagens {
+  padding: 95px 60px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.16);
+}
+.vantagens .titulo {
+  font-size: 30px;
+  color: #002bff;
+}
+.depoimento {
+  font-size: 49px;
+  padding: 124px 0;
+}
+.depoimento .row {
+  align-items: center;
+}
+.depoimento img {
+  border-radius: 50%;
+  max-width: 25%;
+}
+.depoimento .depo {
+  max-width: 75%;
+  padding-left: 75px;
+}
+.depoimento .depo b {
+  font-weight: 700;
+}
+.btn {
+  background-color: #002bff;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Aoki";
+  font-size: 37px;
+  padding: 5px 15px;
+  border-radius: 44px;
+  border: 0;
+}
+.simular {
+  background-color: white;
+  text-align: center;
+}
+.simular .row {
+  align-items: center;
+}
+.simular .coluna-texto img {
+  margin-bottom: 40px;
+}
+footer {
+  padding: 71px 0 52px;
+  font-family: "Aoki";
+  font-size: 37px;
+}
+
+footer .row {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.form .group {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.form .titulo {
+  width: 100%;
+}
+.plano {
+  font-size: 80px;
+  font-weight: bold;
+  width: 100%;
+}
+ul {
+  width: 100%;
+  list-style-type: none;
+  font-size: 35px;
+  margin: 0;
+}
+label {
+  width: 10%;
+}
+input {
+  padding: 5px 15px;
+  margin-left: 25px;
+  width: 90%;
+  border-radius: 32px;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 15px;
+}
